@@ -59,7 +59,7 @@
                                 <tbody>
                                     @foreach ($orderData as $order)
                                     <tr>
-                                        <td class="image product-thumbnail"><img src="products_images/{{$order->image}}" alt="product_image"></td>
+                                        <td class="image product-thumbnail"><img src="images/{{$order->image}}" alt="product_image"></td>
                                         <td>
                                             <span style="color: #2C3333; font-weight: 400;">{{$order->tracking_id}}</span>
                                         </td>

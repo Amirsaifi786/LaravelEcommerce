@@ -265,6 +265,7 @@ class HomeController extends Controller
     public function CashOrder()
     {
         if(Auth::check()){
+            
 
             $user = Auth::user();
             $user_id = $user->id;
@@ -278,6 +279,7 @@ class HomeController extends Controller
                 $order->email = $data->email;
                 $order->phone = $data->phone;
                 $order->address = $data->address;
+              
                 $order->product_title = $data->product_title;
                 $order->product_id = $data->product_id;
                 $order->quantity = $data->quantity;

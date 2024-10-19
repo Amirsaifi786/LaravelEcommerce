@@ -66,7 +66,7 @@
                                         @if ($cartData->isEmpty())
                                         {{-- this part will be updated --}}
                                         <a class="mini-cart-icon" href="{{route('user.cart')}}">
-                                            <img alt="Surfside Media" src="user/assets/imgs/theme/icons/icon-cart.svg">
+                                            <img alt="Surfside Media" src="{{ asset('user/assets/imgs/theme/icons/icon-cart.svg')}}">
                                             <span class="pro-count blue">0</span>
                                         </a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -81,7 +81,7 @@
                                             <?php $product_in_cart +=1; ?>
                                         @endforeach
                                         <a class="mini-cart-icon" href="{{route('user.cart')}}">
-                                            <img alt="Surfside Media" src="user/assets/imgs/theme/icons/icon-cart.svg">
+                                            <img alt="Surfside Media" src="{{ asset('user/assets/imgs/theme/icons/icon-cart.svg')}}">
                                             <span class="pro-count blue">{{$product_in_cart}}</span>
                                         </a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -89,7 +89,7 @@
                                                 @foreach ($cartData as $cart)
                                                 <li>
                                                     <div class="shopping-cart-img">
-                                                        <a href="{{url('product_details',$cart->product_id)}}"><img alt="Product Image" src="products_images/{{$cart->image}}"></a>
+                                                        <a href="{{url('product_details',$cart->product_id)}}"><img alt="Product Image" src="images/{{$cart->image}}"></a>
                                                     </div>
                                                     <div class="shopping-cart-title">
                                                         <h4><a href="{{url('product_details',$cart->product_id)}}">See Details</a></h4>
@@ -116,7 +116,7 @@
                                     
                                     @else
                                         <a class="mini-cart-icon" href="#">
-                                            <img alt="Surfside Media" src="user/assets/imgs/theme/icons/icon-cart.svg">
+                                            <img alt="Surfside Media" src="{{ asset('user/assets/imgs/theme/icons/icon-cart.svg')}}">
                                             <span class="pro-count blue">0</span>
                                         </a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2">

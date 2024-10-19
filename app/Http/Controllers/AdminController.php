@@ -98,7 +98,7 @@ class AdminController extends Controller
                 $product->color = $request->color;
                 $image = $request->image;
                 $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $request->image->move('products_images', $imageName);
+                $request->image->move('images', $imageName);
                 $product->image = $imageName;
                 $product->save();
 
@@ -176,7 +176,7 @@ class AdminController extends Controller
 
                 $product = Product::find($id);
                 $categories = Category::all();
-                return view('admin.edit_product', compact('product'));
+                return view('admin.edit_product', compact('product','categories'));
 
             } else {
                 return redirect('login');
@@ -219,7 +219,7 @@ class AdminController extends Controller
                     $image = $request->image;
                     @unlink(public_path('products_images/' . $product->image));
                     $imageName = time() . '.' . $image->getClientOriginalExtension();
-                    $request->image->move('products_images', $imageName);
+                    $request->image->move('images', $imageName);
                     $product->image = $imageName;
                 } else {
                     $product->image = $product->image;

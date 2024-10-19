@@ -59,7 +59,9 @@
                                         <label class="col-sm-3 col-form-label">Category</label>
                                         <div class="col-sm-9">
                                             <select name="category" class="form-control"  style="color: #fff">
+                                            {{-- @foreach($categories as $key => $value)                                                 --}}
                                                 <option selected value="{{$product->category}}">{{$product->category}}</option>
+                                            {{-- @endforeach --}}
                                             </select>
                                         </div>
                                     </div>
@@ -262,7 +264,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Product Image</label>
                                         <div class="input-group col-sm-9">
-                                            <img id="showImage" style="width: 40%;border-radius: 3%;" src="{{asset($product->image) }}" alt="product_image">
+                                            <img id="showImage" style="width: 40%;border-radius: 3%;" src="{{asset('images/'.$product->image) }}" alt="product_image">
                                         </div>
                                     </div>
                                 </div>

@@ -79,7 +79,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{asset($product->image)}}" alt="product image">
+                                                <img src="{{ asset('images/'.$product->image) }}" alt="product image">
                                             </figure>
                                         </div>
                                     </div>
