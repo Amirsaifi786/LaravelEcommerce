@@ -1,107 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
-    <title>E-SHOP || Login Page</title>
-    @include('admin::layouts.head')
-
+    <meta charset="utf-8">
+    <title>CyberMart | Login</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="user/assets/imgs/theme/favicon.ico">
+    <link rel="stylesheet" href="user/assets/css/main.css">
+    <link rel="stylesheet" href="user/assets/css/custom.css">
 </head>
 
-<body class="bg-gradient-primary">
-
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-        <div class="col-xl-10 col-lg-12 col-md-9 mt-5">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                        <div class="col-lg-6">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                </div>
-                                <form class="user" method="POST" action="{{ route('login') }}">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input type="email"
-                                               class="form-control form-control-user @error('email') is-invalid @enderror"
-                                               name="email" value="{{ old('email') }}" id="exampleInputEmail"
-                                               aria-describedby="emailHelp" placeholder="Enter Email Address..."
-                                               required autocomplete="email" autofocus>
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password"
-                                               class="form-control form-control-user @error('password') is-invalid @enderror"
-                                               id="exampleInputPassword" placeholder="Password" name="password" required
-                                               autocomplete="current-password">
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                                        @enderror
-
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember"
-                                                   id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                            <label class="form-check-label" for="remember">
-                                                {{ __('Remember Me') }}
-                                            </label>
+<body>
+    @include('user.header')
+    @include('user.mobile_header')    
+    <main class="main">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/" rel="nofollow">Home</a>                    
+                    <span></span> Login
+                </div>
+            </div>
+        </div>
+        <section class="pt-150 pb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 m-auto">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
+                                    <div class="padding_eight_all bg-white">
+                                        <div class="heading_s1">
+                                            <h3 class="mb-30">Login</h3>
                                         </div>
+                                        <x-validation-errors class="mb-4" style="color: red;"/>
+                                        @if (session('status'))
+                                            <div class="mb-4 font-medium text-sm text-green-600">
+                                                {{ session('status') }}
+                                            </div>
+                                        @endif
+                                        <form method="post" action="{{ route('login') }}">
+                                            @csrf
+                                            <div class="form-group">
+                                                <input type="text" required="" name="email" placeholder="Your Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <input required="" type="password" name="password" placeholder="Password">
+                                            </div>
+                                            <div class="login_footer form-group">
+                                                <div class="chek-form">
+                                                    <div class="custome-checkbox">
+                                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
+                                                        <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
+                                                    </div>
+                                                </div>
+                                                <a class="text-muted" href="{{ route('password.request') }}">Forgot password?</a>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-fill-out btn-block hover-up" name="login">Log in</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Login
-                                    </button>
-                                </form>
-                                <hr>
-
-                                <div class="text-center">
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link small" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
                                 </div>
-                                <div class="text-center">
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link small" href="{{ route('magic-login.show-login-form') }}">
-                                            {{ __('Login with magic link ?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                                <div class="text-center">
-                                    <a href="{{ url('login/facebook') }}" class="btn btn-social-icon btn-facebook"><i
-                                                class="fab fa-facebook"></i></a>
-                                    <a href="{{ url('login/twitter') }}" class="btn btn-social-icon btn-twitter"><i
-                                                class="fab fa-twitter"></i></a>
-                                    <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><i
-                                                class="fab fa-github"></i></a>
-
-                                </div>
-
+                            </div>
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-6">
+                               <img src="user/assets/imgs/login.png">
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+        </section>
+    </main>
 
-        </div>
-
-    </div>
-</body>
+    @include('user.footer')    
+    <!-- Vendor JS-->
+    <script src="user/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="user/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="user/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="user/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="user/assets/js/plugins/slick.js"></script>
+    <script src="user/assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="user/assets/js/plugins/wow.js"></script>
+    <script src="user/assets/js/plugins/jquery-ui.js"></script>
+    <script src="user/assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="user/assets/js/plugins/magnific-popup.js"></script>
+    <script src="user/assets/js/plugins/select2.min.js"></script>
+    <script src="user/assets/js/plugins/waypoints.js"></script>
+    <script src="user/assets/js/plugins/counterup.js"></script>
+    <script src="user/assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="user/assets/js/plugins/images-loaded.js"></script>
+    <script src="user/assets/js/plugins/isotope.js"></script>
+    <script src="user/assets/js/plugins/scrollup.js"></script>
+    <script src="user/assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="user/assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="user/assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="user/assets/js/main.js?v=3.3"></script>
+    <script src="user/assets/js/shop.js?v=3.3"></script></body>
 
 </html>
+

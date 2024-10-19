@@ -1,40 +1,7 @@
 <?php
 
-use Barryvdh\TranslationManager\ManagerServiceProvider;
 use Illuminate\Support\Facades\Facade;
-use jeremykenedy\LaravelBlocker\LaravelBlockerServiceProvider;
-use Kalimeromk\Filterable\FilterableServiceProvider;
-use Lab404\Impersonate\ImpersonateServiceProvider;
-use Laravel\Socialite\SocialiteServiceProvider;
-use Modules\Admin\Providers\AdminServiceProvider;
-use Modules\Attribute\Providers\AttributeServiceProvider;
-use Modules\Banner\Providers\BannerServiceProvider;
-use Modules\Billing\Providers\BillingServiceProvider;
-use Modules\Brand\Providers\BrandServiceProvider;
-use Modules\Bundle\Providers\BundleServiceProvider;
-use Modules\Cart\Providers\CartServiceProvider;
-use Modules\Category\Providers\CategoryServiceProvider;
-use Modules\Core\Providers\CoreServiceProvider;
-use Modules\Coupon\Providers\CouponServiceProvider;
-use Modules\Front\Providers\FrontServiceProvider;
-use Modules\Google2fa\Providers\Google2faServiceProvider;
-use Modules\Message\Providers\MessageServiceProvider;
-use Modules\Newsletter\Providers\NewsletterServiceProvider;
-use Modules\Notification\Providers\NotificationServiceProvider;
-use Modules\OpenAI\Providers\OpenAIServiceProvider;
-use Modules\Order\Providers\OrderServiceProvider;
-use Modules\Page\Providers\PageServiceProvider;
-use Modules\Permission\Providers\PermissionServiceProvider;
-use Modules\Post\Providers\PostServiceProvider;
-use Modules\Product\Providers\ProductServiceProvider;
-use Modules\Role\Providers\RoleServiceProvider;
-use Modules\Settings\Providers\SettingsServiceProvider;
-use Modules\Shipping\Providers\ShippingServiceProvider;
-use Modules\Size\Providers\SizeServiceProvider;
-use Modules\Tag\Providers\TagServiceProvider;
-use Modules\Tenant\Providers\TenantServiceProvider;
-use Modules\User\Providers\UserServiceProvider;
-use Spatie\Feed\FeedServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 return [
 
@@ -47,7 +14,7 @@ return [
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
     |
-     */
+    */
 
     'name' => env('APP_NAME', 'Laravel'),
 
@@ -60,7 +27,7 @@ return [
     | running in. This may determine how you prefer to configure various
     | services the application utilizes. Set this in your ".env" file.
     |
-     */
+    */
 
     'env' => env('APP_ENV', 'production'),
 
@@ -73,7 +40,7 @@ return [
     | stack traces will be shown on every error that occurs within your
     | application. If disabled, a simple generic error page is shown.
     |
-     */
+    */
 
     'debug' => (bool) env('APP_DEBUG', false),
 
@@ -86,11 +53,11 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | your application so that it is used when running Artisan tasks.
     |
-     */
+    */
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'asset_url' => env('ASSET_URL'),
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +68,7 @@ return [
     | will be used by the PHP date and date-time functions. We have gone
     | ahead and set this to a sensible default for you out of the box.
     |
-     */
+    */
 
     'timezone' => 'UTC',
 
@@ -114,13 +81,9 @@ return [
     | by the translation service provider. You are free to set this value
     | to any of the locales which will be supported by the application.
     |
-     */
+    */
 
-    'locales' => [
-        'en' => 'English',
-        'mk' => 'Macedonian',
-        'de' => 'German',
-    ],
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -131,7 +94,7 @@ return [
     | is not available. You may change the value to correspond to any of
     | the language folders that are provided through your application.
     |
-     */
+    */
 
     'fallback_locale' => 'en',
 
@@ -144,7 +107,7 @@ return [
     | data for your database seeds. For example, this will be used to get
     | localized telephone numbers, street address information and more.
     |
-     */
+    */
 
     'faker_locale' => 'en_US',
 
@@ -157,7 +120,7 @@ return [
     | to a random, 32 character string, otherwise these encrypted strings
     | will not be safe. Please do this before deploying an application!
     |
-     */
+    */
 
     'key' => env('APP_KEY'),
 
@@ -174,7 +137,7 @@ return [
     |
     | Supported drivers: "file", "cache"
     |
-     */
+    */
 
     'maintenance' => [
         'driver' => 'file',
@@ -190,86 +153,25 @@ return [
     | request to your application. Feel free to add your own services to
     | this array to grant expanded functionality to your applications.
     |
-     */
+    */
 
-    'providers' => [
-
-        /*
-         * Laravel Framework Service Providers...
-         */
-        Illuminate\Auth\AuthServiceProvider::class,
-        Illuminate\Broadcasting\BroadcastServiceProvider::class,
-        Illuminate\Bus\BusServiceProvider::class,
-        Illuminate\Cache\CacheServiceProvider::class,
-        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Cookie\CookieServiceProvider::class,
-        Illuminate\Database\DatabaseServiceProvider::class,
-        Illuminate\Encryption\EncryptionServiceProvider::class,
-        Illuminate\Filesystem\FilesystemServiceProvider::class,
-        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
-        Illuminate\Hashing\HashServiceProvider::class,
-        Illuminate\Mail\MailServiceProvider::class,
-        Illuminate\Notifications\NotificationServiceProvider::class,
-        Illuminate\Pagination\PaginationServiceProvider::class,
-        Illuminate\Pipeline\PipelineServiceProvider::class,
-        Illuminate\Queue\QueueServiceProvider::class,
-        Illuminate\Redis\RedisServiceProvider::class,
-        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
-        Illuminate\Session\SessionServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
-        Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
-
+    'providers' => ServiceProvider::defaultProviders()->merge([
         /*
          * Package Service Providers...
          */
-        Barryvdh\DomPDF\ServiceProvider::class,
-        SocialiteServiceProvider::class,
-        PermissionServiceProvider::class,
-        FeedServiceProvider::class,
-        ManagerServiceProvider::class,
-        ImpersonateServiceProvider::class,
-        FilterableServiceProvider::class,
-        LaravelBlockerServiceProvider::class,
-        UserServiceProvider::class,
-        BannerServiceProvider::class,
-        BrandServiceProvider::class,
-        CartServiceProvider::class,
-        CategoryServiceProvider::class,
-        CouponServiceProvider::class,
-        RoleServiceProvider::class,
-        OrderServiceProvider::class,
-        PostServiceProvider::class,
-        ProductServiceProvider::class,
-        SettingsServiceProvider::class,
-        ShippingServiceProvider::class,
-        TagServiceProvider::class,
-        AdminServiceProvider::class,
-        MessageServiceProvider::class,
-        NotificationServiceProvider::class,
-        FrontServiceProvider::class,
-        CoreServiceProvider::class,
-        NewsletterServiceProvider::class,
-        SizeServiceProvider::class,
-        AttributeServiceProvider::class,
-        BillingServiceProvider::class,
-        PermissionServiceProvider::class,
-        Google2faServiceProvider::class,
-        BundleServiceProvider::class,
-        PageServiceProvider::class,
-        TenantServiceProvider::class,
-        OpenAIServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TelescopeServiceProvider::class,
-    ],
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
+        BarryVdh\DomPDF\ServiceProvider::class
+    ])->toArray(),
 
     /*
     |--------------------------------------------------------------------------
@@ -280,8 +182,11 @@ return [
     | is started. However, feel free to register as many as you wish as
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
-     */
+    */
 
-    'aliases' => Facade::defaultAliases()->merge([])->toArray(),
+    'aliases' => Facade::defaultAliases()->merge([
+        // 'Example' => App\Facades\Example::class,
+        'PDF' => BarryVdh\DomPDF\Facades::class
+    ])->toArray(),
 
 ];
