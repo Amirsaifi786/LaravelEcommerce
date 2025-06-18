@@ -59,7 +59,9 @@
                                         <label class="col-sm-3 col-form-label">Category</label>
                                         <div class="col-sm-9">
                                             <select name="category" class="form-control"  style="color: #fff">
-                                            {{-- @foreach($categories as $key => $value)                                                 --}}
+                                            {{-- @foreach($categories as $key => $value)             
+                                            @dd($categories)                                   
+                                                <option selected value="{{$product->category}}">{{$product->category}}</option> --}}
                                                 <option selected value="{{$product->category}}">{{$product->category}}</option>
                                             {{-- @endforeach --}}
                                             </select>

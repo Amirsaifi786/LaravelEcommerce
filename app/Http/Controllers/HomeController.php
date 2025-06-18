@@ -274,6 +274,8 @@ class HomeController extends Controller
             foreach($cartData as $data){
 
                 $order = new Order();
+
+                dd($data->image);
                 $order->user_id = $data->user_id;
                 $order->name = $data->name;
                 $order->email = $data->email;

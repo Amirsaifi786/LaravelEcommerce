@@ -80,7 +80,11 @@
                                             </div>
                                         </td>
                                         <td>
+<<<<<<< HEAD
                                             <img src="{{$order->image}}" alt="image" />
+=======
+                                            <img src="images/{{$order->image}}" alt="image" />
+>>>>>>> dda74384df2e302c08df9c7c2f1874c612007d3e
                                         </td>
                                         <td>{{$order->created_at}}</td>
                                         <td>
