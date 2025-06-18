@@ -28,39 +28,48 @@ A Computer Selling Wesbsite(E-Commerce) with Laravel 10.x
 
 
 <h3>Shop Page of the Web</h3>
-![Home Page](screenshots/shop.png)
+
+![Shop Page](screenshots/shop.png)
 
 
 
 <h3>Product Page of the Web</h3>
+
 ![Product Page](screenshots/products.png)
 
 
 <h3>Product Details Page of the Web</h3>
+
 ![Product Details Page](screenshots/product-details.png)
 
 
 <h3>User Cart Page of the Web</h3>
+
 ![User Cart Page](screenshots/cart.png)
 
 
 <h3>Payment With Cart Page</h3>
+
 ![Payment With Cart Page](screenshots/payment.png)
 
 
 <h3>Payment with Strip API</h3>
+
 ![Payment with Strip API](screenshots/stripe%20payment.png)
 
 
 <h3>User Verify Email</h3>
+
 ![User Verify Email](screenshots/verify%20email.png)
 
 
 <h3>Admin Dashboard</h3>
+
 ![Admin Dashboard](screenshots/admin%20dashboard.png)
 
 
 <h3>Add Product Page</h3>
+
 ![Add Product Page Page](screenshots/add%20product.png)
 
 
