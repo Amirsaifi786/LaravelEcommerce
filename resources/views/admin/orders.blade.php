@@ -80,7 +80,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <img src="products_images/{{$order->image}}" alt="image" />
+                                            <img src="{{$order->image}}" alt="image" />
                                         </td>
                                         <td>{{$order->created_at}}</td>
                                         <td>

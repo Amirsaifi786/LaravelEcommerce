@@ -60,7 +60,7 @@
                             <tr>
                                 <td>
                                     {{-- <img src="products_images/{{$product->image}}" alt="image" /> --}}
-                                    <img src="{{ asset('images/'.$product->image) }}" alt="{{ $product->title }}" />
+                                    <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" />
 
                                 </td>
                                 <td>{{$product->category}}</td>

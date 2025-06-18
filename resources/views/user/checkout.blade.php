@@ -37,7 +37,7 @@
                     {{-- this part will be updated --}}
                     <div class="text-center">
                         <h1>Cart is empty</h1>
-                        <img style="width: 25%" src="/user/assets/imgs/empty-cart-img.png" alt="">
+                        <img style="width: 25%" src="{{asset('/user/assets/imgs/empty-cart-img.png')}}" alt="">
                     </div>
                     @else
                     <?php $totalPrice = 0; ?>
@@ -57,7 +57,7 @@
                                 <tbody>
                                     @foreach ($cartData as $cart)
                                     <tr>
-                                        <td class="image product-thumbnail"><img src="{{asset('images/'.$cart->image)}}" alt="product_image"></td>
+                                        <td class="image product-thumbnail"><img src="{{asset($cart->image)}}" alt="product_image"></td>
                                         <td class="product-des product-name px-5">
                                             <h5 class="product-name px-5"><a href="{{url('product_details', $cart->product_id)}}">{{$cart->product_title}}</a></h5>
                                         </td>

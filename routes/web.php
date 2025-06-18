@@ -22,10 +22,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     route::get('/dashboard', [HomeController::class, 'Home'])->name('dashboard');
 });
 
-// Route::get('/create-users', function () {
-//     User::factory(10)->create(); // Creates 10 users
-//     return '10 users created!';
-// });
+Route::get('/create-users', function () {
+    User::factory(10)->create(); // Creates 10 users
+    return '10 users created!';
+});
 /* Admin Routes */
 
 
@@ -77,7 +77,7 @@ Route::post('/stripe/{totalPrice}', [HomeController::class, 'StripePost'])->name
 Route::get('/insert-products', function () {
     // Sample products with images from Lorem Picsum
     $products = [];
-    for ($i = 1; $i <= 10; $i++) {
+    for ($i = 1; $i <= 20; $i++) {
         $products[] = [
             'title' => 'Product ' . $i,
             'category' => 'Category ' . rand(1, 3), // Random category for variety

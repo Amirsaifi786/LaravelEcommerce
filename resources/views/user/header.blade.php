@@ -8,7 +8,7 @@
                         <li>
                             <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
                             <ul class="language-dropdown">
-                                <li><a href="#"><img src="user/assets/imgs/theme/flag-tr.png" alt="">Turkish</a></li>
+                                <li><a href="#"><img src="{{asset('user/assets/imgs/theme/flag-tr.png')}}" alt="">Turkish</a></li>
                             </ul>
                         </li>                                
                         </ul>
@@ -49,7 +49,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="/"><img src="user/assets/imgs/logo/app_logo.png" alt="logo"></a>
+                    <a href="/"><img src="{{('user/assets/imgs/logo/app_logo.png')}}" alt="logo"></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-1">
@@ -89,7 +89,7 @@
                                                 @foreach ($cartData as $cart)
                                                 <li>
                                                     <div class="shopping-cart-img">
-                                                        <a href="{{url('product_details',$cart->product_id)}}"><img alt="Product Image" src="images/{{$cart->image}}"></a>
+                                                        <a href="{{url('product_details',$cart->product_id)}}"><img alt="Product Image" src={{asset($cart->image)}}></a>
                                                     </div>
                                                     <div class="shopping-cart-title">
                                                         <h4><a href="{{url('product_details',$cart->product_id)}}">See Details</a></h4>
@@ -123,7 +123,7 @@
                                             <div class="shopping-cart-footer">
                                                 <div class="shopping-cart-total">
                                                     <center>
-                                                        <img style="width: 50%" src="/user/assets/imgs/empty-cart-img.png" alt="">
+                                                        <img style="width: 50%" src="{{asset('/user/assets/imgs/empty-cart-img.png')}}" alt="">
                                                         <h4>You need to login first!</h4>
                                                         <div class="shopping-cart-button">
                                                             <a href="{{route('login')}}" class="outline">Login</a>

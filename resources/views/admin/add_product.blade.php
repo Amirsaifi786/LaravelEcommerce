@@ -263,7 +263,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Product Image</label>
                                         <div class="input-group col-sm-9">
-                                            <img id="showImage" style="width: 40%;border-radius: 3%;" src="/admin/assets/images/no_image.jpg" alt="product_image">
+                                            <img id="showImage" style="width: 40%;border-radius: 3%;" src="{{asset('/admin/assets/images/no_image.jpg')}}" alt="product_image">
                                         </div>
                                     </div>
                                 </div>

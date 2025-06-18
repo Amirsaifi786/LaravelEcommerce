@@ -38,7 +38,7 @@
                     {{-- this part will be updated --}}
                     <div class="text-center">
                         <h1>No Order Yet!</h1>
-                        <img style="width: 25%" src="/user/assets/imgs/empty-cart-img.png" alt="">
+                        <img style="width: 25%" src="{{asset('/user/assets/imgs/empty-cart-img.png')}}" alt="">
                     </div>
                     @else
                     <div class="col-12 mb-100">
@@ -59,7 +59,7 @@
                                 <tbody>
                                     @foreach ($orderData as $order)
                                     <tr>
-                                        <td class="image product-thumbnail"><img src="images/{{$order->image}}" alt="product_image"></td>
+                                        <td class="image product-thumbnail"><img src="{{asset($order->image)}}" alt="product_image"></td>
                                         <td>
                                             <span style="color: #2C3333; font-weight: 400;">{{$order->tracking_id}}</span>
                                         </td>
@@ -124,7 +124,7 @@
                                 <tbody>
                                     @foreach ($past_orders as $order)
                                     <tr>
-                                        <td class="image product-thumbnail"><img src="products_images/{{$order->image}}" alt="product_image"></td>
+                                        <td class="image product-thumbnail"><img src="{{asset($order->image)}}" alt="product_image"></td>
                                         <td>
                                             <span style="color: #2C3333; font-weight: 400;">{{$order->tracking_id}}</span>
                                         </td>
