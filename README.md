@@ -28,7 +28,8 @@ A Computer Selling Wesbsite(E-Commerce) with Laravel 10.x
 
 
 <h3>Shop Page of the Web</h3>
-![Shop Page](screenshots/shop.png)
+![Home Page](screenshots/shop.png)
+
 
 
 <h3>Product Page of the Web</h3>
