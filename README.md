@@ -24,34 +24,43 @@ A Computer Selling Wesbsite(E-Commerce) with Laravel 10.x
 
 <h3>Home Page of the Web</h3>
 
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/homepage.png'>
+![Home Page](screenshots/homepage.png)
 
 
 <h3>Shop Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/shop.png'>
+![Shop Page](screenshots/shop.png)
+
 
 <h3>Product Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/products.png'>
+![Product Page](screenshots/products.png)
+
 
 <h3>Product Details Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/product-details.png'>
+![Product Details Page](screenshots/product-details.png)
+
 
 <h3>User Cart Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/cart.png'>
+![User Cart Page](screenshots/cart.png)
+
 
 <h3>Payment With Cart Page</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/payment.png'>
+![Payment With Cart Page](screenshots/payment.png)
+
 
 <h3>Payment with Strip API</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/stripe%20payment.png'>
+![Payment with Strip API](screenshots/stripe%20payment.png)
+
 
 <h3>User Verify Email</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/verify%20email.png'>
+![User Verify Email](screenshots/verify%20email.png)
+
 
 <h3>Admin Dashboard</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/admin%20dashboard.png'>
+![Admin Dashboard](screenshots/admin%20dashboard.png)
+
 
 <h3>Add Product Page</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/add%20product.png'>
+![Add Product Page Page](screenshots/add%20product.png)
+
 
 # LaravelEcommerce
